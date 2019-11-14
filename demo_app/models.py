@@ -8,7 +8,7 @@ class Source(models.Model):
 
 class RevenueRecord(models.Model):
     date = models.DateField()
-    publisher = models.ForeignKey(Publisher)
-    source = models.ForeignKey(Source)
+    publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
+    source = models.ForeignKey(Source, on_delete=models.CASCADE)
     clicks = models.IntegerField()
     revenue = models.FloatField()
